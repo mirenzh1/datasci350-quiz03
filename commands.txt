@@ -98,3 +98,33 @@ The script failed because max_tokens=15 truncated the JSON response before it wa
 git add ollama/ commands.txt
 git commit -m "Add Python calls"
 git push
+
+chmod 400 ds350-quiz03-key.pem
+ssh -i ds350-quiz03-key.pem ubuntu@18.116.39.12
+ubuntu@ip-172-31-21-254:~$
+
+sudo apt update
+sudo apt install -y python3-pandas python3-matplotlib python3-seaborn
+
+scp -i /Users/sammimi/Documents/ori/Emory/Atlanta/26_Fall/DS350/ds350-quiz03-key.pem aws/traffic_analysis.py aws/website_traffic.txt ubuntu@18.116.39.12:~/
+
+python3 traffic_analysis.py > results.txt
+
+cat /var/lib/cloud/data/instance-id >> results.txt
+sha256sum results.txt > fingerprint.txt
+
+ubuntu@ip-172-31-21-254:~$ cat results.txt
+cat fingerprint.txt
+Website Traffic Analysis:
+========================
+Total days analysed: 30
+Average page views: 2366
+Average unique visitors: 1973
+Peak traffic day: 2025-05-25 with 2680 unique visitors
+Average bounce rate: 24.2%
+Analysis complete. Results saved to 'traffic_analysis.png'
+i-0f66f76c82850c71f
+6808783f9b747b4bfd24305bad99568f7d71fccbce6d6d389325437b301fa8db  results.txt
+
+scp -i /Users/sammimi/Documents/ori/Emory/Atlanta/26_Fall/DS350/ds350-quiz03-key.pem ubuntu@18.116.39.12:~/results.txt ubuntu@18.116.39.12:~/fingerprint.txt ubuntu@18.116.39.12:~/traffic_analysis.png aws/
+
