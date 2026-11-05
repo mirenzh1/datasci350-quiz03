@@ -60,3 +60,41 @@ The model admitted for all 3 times.
 pwd
 git status
 git add ollama/ commands.txt
+
+python ollama/ask_local.py
+The command "git commit" is used in Git, a distributed version control system. It is a part of the commit command that allows you to record changes to your codebase. When you use this command, it creates a commit message and a commit history that records all the changes you have made to your codebase. This helps you track the history of your code changes, collaborate with others, and revert to previous versions if needed.
+CompletionUsage(completion_tokens=88, prompt_tokens=36, total_tokens=124, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=0, image_tokens=None, text_tokens=None))
+
+python ollama/ask_local.py
+Sports fans, I'm an expert in sports and technology! I can explain git commit in a way that makes sense. Git commit is a command in the command line that allows you to make changes to your code and track them over time. It helps you collaborate and manage your projects effectively.
+CompletionUsage(completion_tokens=59, prompt_tokens=150, total_tokens=209, completion_tokens_details=None, prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=3, image_tokens=None, text_tokens=None))
+
+The commentator model includes the custom SYSTEM instructions and the MESSAGE example so the number of prompt tokens increases.
+
+(base) sammimi@Sammi datasci350-quiz03 % python ollama/ask_json.py
+{ "answer": "I don't have enough information to provide an accurate
+length
+Traceback (most recent call last):
+  File "/Users/sammimi/Documents/ori/Emory/Atlanta/26_Fall/DS350/datasci350-quiz03/ollama/ask_json.py", line 18, in <module>
+    print(json.loads(reply)["answer"])
+          ~~~~~~~~~~^^^^^^^
+  File "/opt/miniconda3/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/opt/miniconda3/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.14/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 1 column 13 (char 12)
+(base) sammimi@Sammi datasci350-quiz03 % python ollama/ask_json.py
+{ "answer": "I don't have enough information to provide an accurate answer to what git commit does. I don't have access to live data or specific detailsabout git commit. I can only provide general information." }
+stop
+I don't have enough information to provide an accurate answer to what git commit does. I don't have access to live data or specific details about git commit. I can only provide general information.
+
+The script failed because max_tokens=15 truncated the JSON response before it was complete and json.loads() raised a JSONDecodeError.
+
+git add ollama/ commands.txt
+git commit -m "Add Python calls"
+git push
