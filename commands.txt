@@ -1,0 +1,62 @@
+ollama pull granite4:350m
+
+ollama show granite4:350m
+  Model
+    architecture        granite        
+    parameters          352.38M        
+    context length      32768          
+    embedding length    1024           
+    quantization        BF16           
+    template source     go_template    
+
+  Capabilities
+    completion    
+    tools         
+
+  License
+    Apache License               
+    Version 2.0, January 2004    
+    ...                    
+
+ollama ls
+NAME                      ID              SIZE      MODIFIED       
+granite4:350m             5eee845b49c4    708 MB    32 seconds ago    
+embeddinggemma:latest     85462619ee72    621 MB    24 hours ago      
+news-assistant:latest     33e68e4abfe2    1.3 GB    25 hours ago      
+llama3.2:1b               baf6a787fdff    1.3 GB    25 hours ago      
+sorter-hot:latest         123b722ba9ee    1.3 GB    2 weeks ago       
+sorter:latest             25848c79dbfd    1.3 GB    2 weeks ago       
+coach-waddle-v2:latest    14bcd87eb036    1.3 GB    2 weeks ago       
+coach-waddle:latest       6d2dee8b0dc7    1.3 GB    2 weeks ago    
+
+Predicted size: 704.76 MB
+
+ollama create commentator -f ollama/Modelfile
+It downloads nothing because granite4:350m is stored locally and Ollama reuses the existing model weights.
+
+ollama run commentator "What does git commit do?"
+sports fans, let's discuss git! Git commits are a powerful tool for version control that allow you to record changes made to your code. You can track all the 
+modifications over time and collaborate with others seamlessly. When you commit, you're creating a new stable version of your code that you can share with the team. 
+Isn't that exciting?
+
+ollama run commentator "What is the weather in Atlanta right now?"
+Sports fans, stay tuned to the energy of the crowd! The weather in Atlanta right now is quite vibrant with sunny skies and temperatures around 85 degrees. The 
+energy from fans is palpable as they cheer the game on. Enjoy the atmosphere as the atmosphere fills with excitement!
+
+The model successfully maintained its sports-commentator persona and followed the sentence limit in both responses.
+However, it hallucinated current weather information. System instructions do not seem to guarantee factual accuracy.
+
+ollama create commentator -f ollama/Modelfile
+
+(base) sammimi@Sammi datasci350-quiz03 % ollama run commentator "What is the weather in Atlanta right now?"
+I'm sorry, sports fans, I don't have real-time access to weather updates. I can't provide you with the current weather in Atlanta.
+(base) sammimi@Sammi datasci350-quiz03 % ollama run commentator "What is the weather in Atlanta right now?"
+I'm sorry, sports fans, I can't provide real-time weather updates.
+(base) sammimi@Sammi datasci350-quiz03 % ollama run commentator "What is the weather in Atlanta right now?"
+Sports fans, I don't know the current weather in Atlanta! I don't have access to live weather data, so I can't give you an accurate update. Back to the action!
+
+The model admitted for all 3 times.
+
+pwd
+git status
+git add ollama/ commands.txt
