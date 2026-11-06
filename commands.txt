@@ -132,6 +132,8 @@ git add aws/ commands.txt
 git commit -m "Add EC2 analysis"
 git push
 
+When an EC2 instance is stopped rather than terminated, you no longer pay for compute time, but you still pay for attached EBS storage and other retained billable resources, such as public IPv4 addresses.
+
 AI:
 ChatGPT helped me identify the cause of the JSON parsing error and suggested increasing max_tokens.
 For the AWS tasks, it guided me through EC2 configuration, SSH authentication, file transfers using SCP.
