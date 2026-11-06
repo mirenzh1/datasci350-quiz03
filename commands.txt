@@ -128,3 +128,11 @@ i-0f66f76c82850c71f
 
 scp -i /Users/sammimi/Documents/ori/Emory/Atlanta/26_Fall/DS350/ds350-quiz03-key.pem ubuntu@18.116.39.12:~/results.txt ubuntu@18.116.39.12:~/fingerprint.txt ubuntu@18.116.39.12:~/traffic_analysis.png aws/
 
+git add aws/ commands.txt
+git commit -m "Add EC2 analysis"
+git push
+
+AI:
+ChatGPT helped me identify the cause of the JSON parsing error and suggested increasing max_tokens.
+For the AWS tasks, it guided me through EC2 configuration, SSH authentication, file transfers using SCP.
+"Walk me through launching an AWS EC2 instance."
